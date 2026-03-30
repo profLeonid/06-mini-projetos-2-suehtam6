@@ -1,9 +1,9 @@
 'use strict'
 
-const criarListaNumeros = function(quantidade){
+const criarListaNumeros = function(){
     let lista = []
 
-    for(let i = 1; i <= quantidade; i++){
+    for(let i = 1; i <= 10; i++){
         lista.push(i)
     }
     return lista
@@ -12,7 +12,7 @@ const criarListaNumeros = function(quantidade){
 const criarListaAdicao = function(quantidade){
     let lista = []
 
-    for(let i = 1; i <= quantidade; i++){
+    for(let i = 1; i <= 10; i++){
         lista.push(Number(quantidade) + Number(i))
     }
     return lista
@@ -22,7 +22,7 @@ const criarListaSubtracao = function(quantidade){
     let lista = []
     
 
-    for(let i = 1; i <= quantidade; i++){
+    for(let i = 1; i <= 10; i++){
 
         lista.push(quantidade - i)
     }
@@ -32,7 +32,7 @@ const criarListaSubtracao = function(quantidade){
 const criarListaMultiplicacao = function(quantidade){
     let lista = []
 
-    for(let i = 1; i <= quantidade; i++){
+    for(let i = 1; i <= 10; i++){
         lista.push(quantidade * i)
     }
     return lista
@@ -41,7 +41,7 @@ const criarListaMultiplicacao = function(quantidade){
 const criarListaDivisao = function(quantidade){
     let lista = []
 
-    for(let i = 1; i <= quantidade; i++){
+    for(let i = 1; i <= 10; i++){
         lista.push(quantidade / i)
     }
     return lista
@@ -54,14 +54,14 @@ const gerar = function(){
     
     
 
-    let pegarListaNumeros = criarListaNumeros(quantidade)
+    let pegarListaNumeros = criarListaNumeros()
     let pegarListaAdicao = criarListaAdicao(quantidade)
     let pegarListaSubtracao = criarListaSubtracao(quantidade)
     let pegarListaMultiplo = criarListaMultiplicacao(quantidade)
     let pegarListaDivisao = criarListaDivisao(quantidade)
 
     
-    for(let i = 0; i < quantidade; i++){
+    for(let i = 0; i < 10; i++){
         const tr = document.createElement("tr")
 
         const td1 = document.createElement("td")
