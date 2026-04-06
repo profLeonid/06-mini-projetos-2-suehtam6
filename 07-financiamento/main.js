@@ -37,8 +37,9 @@ const gerar = function(){
     let parcela = document.getElementById('parcelas').value
 
     let meses = criarListaMeses(parcela)
-    let parcelaMensal = criarListaTotalMes(parcela, juros)
-    let saldoDevedor = valorTotal
+    let parcelaMensal = criarListaTotalMes(valorTotal, juros)
+    let saldoDevedor  = valorTotal
+
 
     
     for(let i = 0; i < parcela; i++){
@@ -50,10 +51,10 @@ const gerar = function(){
         const td4 = document.createElement("td")
         const td5 = document.createElement("td")
 
-        
+        parcelaMensal = criarListaTotalMes(parcelaMensal, juros)
         let jurosMes = criarListaJurosDoMes(saldoDevedor, juros)
         let valorParcela = criarListaValorParcela(valorTotal, parcela)
-        saldoDevedor = criarListaSaldoDevedor(saldoDevedor, parcelaMensal)
+        saldoDevedor = criarListaSaldoDevedor(saldoDevedor, valorParcela)
     
         tr.append(td1, td2, td3, td4, td5)
         tabela.appendChild(tr)
