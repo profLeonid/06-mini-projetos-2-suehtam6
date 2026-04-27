@@ -20,7 +20,7 @@ const criarListaJurosDoMes = function(saldoDevedor, juros){
 }
 
 const criarListaTotalMes = function(parcela, juros){
-    return parcela - juros
+    return parcela + juros
 }
 
 const criarListaSaldoDevedor = function(valorTotal, parcelaMensal){
@@ -37,7 +37,6 @@ const gerar = function(){
     let parcela = document.getElementById('parcelas').value
 
     let meses = criarListaMeses(parcela)
-    let parcelaMensal = criarListaTotalMes(valorTotal, juros)
     let saldoDevedor  = valorTotal
 
 
@@ -51,19 +50,20 @@ const gerar = function(){
         const td4 = document.createElement("td")
         const td5 = document.createElement("td")
 
-        parcelaMensal = criarListaTotalMes(parcelaMensal, juros)
         let jurosMes = criarListaJurosDoMes(saldoDevedor, juros)
         let valorParcela = criarListaValorParcela(valorTotal, parcela)
+        let parcelaMensal = criarListaTotalMes(valorParcela, jurosMes)
+        
         saldoDevedor = criarListaSaldoDevedor(saldoDevedor, valorParcela)
     
         tr.append(td1, td2, td3, td4, td5)
         tabela.appendChild(tr)
 
         td1.textContent = meses[i]
-        td2.textContent = valorParcela
-        td3.textContent = jurosMes.toFixed(2)
-        td4.textContent = parcelaMensal
-        td5.textContent = saldoDevedor
+        td2.textContent = `R$${valorParcela.toFixed(2)}`
+        td3.textContent = `R$${jurosMes.toFixed(2)}`
+        td4.textContent = `R$${parcelaMensal.toFixed(2)}`
+        td5.textContent = `R$${saldoDevedor.toFixed(2)}`
 
     }
 
